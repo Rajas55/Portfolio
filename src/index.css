@@ -1,21 +1,13 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-/* Existing styles... */
-/* Add these new animations */
+
+/* Animations */
 @keyframes blob {
-  0% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  100% {
-    transform: translate(0px, 0px) scale(1);
-  }
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
 }
 .animate-blob {
   animation: blob 7s infinite;
@@ -26,34 +18,31 @@
 .animation-delay-4000 {
   animation-delay: 4s;
 }
-/* Add smooth section transitions */
-section {
-  @apply relative transition-opacity duration-500;
-}
-section::after {
-  content: '';
-  @apply absolute inset-0 bg-gradient-to-b from-transparent via-black/5 to-transparent opacity-0 transition-opacity duration-300;
-}
-section:hover::after {
-  @apply opacity-100;
-}
-/* Enhanced gradient effects */
-.enhanced-gradient {
-  @apply relative overflow-hidden;
-}
-.enhanced-gradient::before {
-  content: '';
-  @apply absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 transition-opacity duration-300;
-}
-.enhanced-gradient:hover::before {
-  @apply opacity-100;
-}
+
 /* Glowing text effect */
 .glow-text {
   text-shadow: 0 0 10px rgba(59, 130, 246, 0.5),
                0 0 20px rgba(59, 130, 246, 0.3),
                0 0 30px rgba(59, 130, 246, 0.1);
 }
+
+/* Enhanced gradient effect (safe version) */
+.enhanced-gradient {
+  @apply relative overflow-hidden;
+}
+.enhanced-gradient::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 transition-opacity duration-300 pointer-events-none;
+}
+.enhanced-gradient:hover::before {
+  @apply opacity-100;
+}
+
+/* Safe section transition without ::after overlay */
+section {
+  @apply relative transition-opacity duration-500;
+}
+
 /* Enhanced scrollbar */
 ::-webkit-scrollbar {
   @apply w-2;
@@ -64,14 +53,19 @@ section:hover::after {
 ::-webkit-scrollbar-thumb {
   @apply bg-gradient-to-b from-blue-500 to-purple-500 rounded-full;
 }
+
 /* Smooth transitions for all interactive elements */
 a, button {
   @apply transition-all duration-300;
 }
+
 /* Card hover effects */
 .hover-card {
   @apply transition-all duration-300;
 }
 .hover-card:hover {
   @apply transform -translate-y-1 shadow-lg shadow-blue-500/10;
+}
+html {
+  scroll-behavior: smooth;
 }

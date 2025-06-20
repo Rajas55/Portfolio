@@ -19,14 +19,19 @@ export const BackToTop = () => {
       behavior: "smooth"
     });
   };
-  return <button onClick={scrollToTop} className={`
-        fixed bottom-20 right-8 z-40 p-3 rounded-full
+  return (
+    <button
+      onClick={scrollToTop}
+      className={`
+        fixed bottom-20 right-8 z-[100] p-3 rounded-full
         bg-gradient-to-r from-blue-500 to-purple-500
         text-white shadow-lg
         transform transition-all duration-300
         hover:scale-110 hover:shadow-xl
         ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"}
-      `}>
+      `}
+    >
       <ChevronUp size={24} />
-    </button>;
+    </button>
+  );
 };

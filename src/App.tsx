@@ -46,8 +46,8 @@ export function App() {
         {/* <BlogPreview />
         <Testimonials />
         <Newsletter /> */}
-        <Extracurricular />
-        <Contact />
+        {/* <Extracurricular /> */}
+      <Contact />
       </main>
       <Footer />
       <FloatingContact />

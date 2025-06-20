@@ -62,7 +62,10 @@ export const ThreeBackground = () => {
       containerRef.current?.removeChild(renderer.domElement);
     };
   }, []);
-  return <div ref={containerRef} className="fixed top-0 left-0 w-full h-full -z-10" style={{
-    pointerEvents: "none"
-  }} />;
+  return (
+    <div
+      ref={containerRef}
+      className="fixed inset-0 w-full h-full z-0 pointer-events-none"
+    />
+  );
 };

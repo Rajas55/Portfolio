@@ -29,9 +29,18 @@ export const About = () => {
         </h2>
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
+          <div className="text-center space-y-2 mb-6">
+  <h1 className="text-3xl sm:text-4xl font-bold text-white">
+    Rajas Yardi
+  </h1>
+  <p className="text-lg text-gray-300">
+    Full-Stack Web Developer | React • Spring Boot • Accessibility Advocate
+  </p>
+</div>
             <p className="text-lg text-gray-300">
-            I'm Rajas Yardi, a Full Stack Developer based in Syracuse, New York. I'm currently pursuing a Master's in Computer Science at Syracuse University and hold a Bachelor's in Computer Engineering from Vishwakarma Institute of Technology. I specialize in web development, Java, and cloud services, and I enjoy tackling complex challenges with creative solutions.
-            </p>
+            I'm Rajas Yardi, a Full-Stack Web Developer based in Syracuse, New York. I'm currently pursuing a Master's in Computer Science at Syracuse University and hold a Bachelor's in Computer Engineering from Vishwakarma Institute of Technology. I specialize in building responsive, accessible web applications using <strong>React</strong>, <strong>Java</strong>, and <strong>Spring Boot</strong>, and I enjoy tackling complex challenges through thoughtful design and clean, scalable code.
+
+</p>
             <p className="text-lg text-gray-300">
             In my internships at Excellarate and Micromate, I gained hands-on experience building dynamic applications using technologies like React, Spring Boot, Java, and machine learning. I'm passionate about leveraging technology to bring innovative ideas to life and am always excited to connect with like-minded professionals.
 
